@@ -1,128 +1,75 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <title>lunaLauncher BetaTest - Winter Event</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<style>
-    body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(to bottom, #1b1e2e, #24284a);
-    color: #fff;
-    text-align: center;
-    background: url('bg.gif') repeat center center fixed;
-}
-
-header {
-    margin-top: 20px;
-}
-
-.banner {
-    width: 100%;
-    max-width: 1000px;
-    animation: fadeIn 2s ease-in-out;
-    border-radius: 16px;
-}
-
-h1 {
-    font-size: 2.5rem;
-    margin-top: 30px;
-}
-
-.subtitle {
-    color: #b0c4de;
-    margin-bottom: 20px;
-}
-
-section {
-    margin: 30px auto;
-    max-width: 800px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 0 12px rgba(255, 255, 255, 0.1);
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-li {
-    margin: 8px 0;
-}
-
-a {
-    color: #9fdcff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-a:hover {
-    color: #fff;
-    text-decoration: underline;
-}
-
-footer {
-    margin-top: 40px;
-    padding: 15px;
-    background: rgba(0, 0, 0, 0.2);
-}
-
-@keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
-
-/* Hiệu ứng tuyết rơi */
-.snow {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('assets/snow_fall.gif') repeat;
-    opacity: 0.3;
-    pointer-events: none;
-    z-index: -1;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>lunaLauncher BetaTest</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: "Segoe UI", sans-serif;
+      color: white;
+      text-align: center;
     }
-    
-</style>
+
+    /* Background GIF */
+    body {
+      background: url('bg.gif') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    /* Overlay mờ để đọc text dễ hơn */
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 32, 0.4);
+      z-index: 0;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      top: 40%;
+      transform: translateY(-40%);
+    }
+
+    h1 {
+      font-size: 2.8em;
+      letter-spacing: 2px;
+      text-shadow: 0 0 15px #00caff;
+    }
+
+    p {
+      font-size: 1.2em;
+      color: #cfeaff;
+    }
+
+    a {
+      color: #a8e1ff;
+      text-decoration: none;
+      border: 1px solid #a8e1ff;
+      padding: 10px 20px;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    a:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+  </style>
+</head>
 <body>
-    <div class="snow"></div>
-
-    <header>
-    </header>
-
-    <main>
-        <h1>lunaLauncher BetaTest ❄️</h1>
-        <p class="subtitle">Phiên bản mùa đông: 0.0.03 → 0.0.09</p>
-
-        <section class="downloads">
-            <h2>📦 Các phiên bản Test hiện có</h2>
-            <ul>
-                <li><a href="https://github.com/pmgdev64/luna-launcher/releases/tag/alpha-test">Alpha 0.0.01</a></li>
-                <li><a href="https://github.com/pmgdev64/luna-launcher/releases/tag/alpha-test-2">Alpha 0.0.02</a></li>
-                <li><a href="https://github.com/username/lunaLauncher/releases/tag/v0.0.03">Beta 0.0.03</a></li>
-                <li><a href="#">Beta 0.0.04 (sắp ra mắt)</a></li>
-                <li><a href="#">Beta 0.0.05</a></li>
-                <li><a href="#">Beta 0.0.06</a></li>
-                <li><a href="#">Beta 0.0.07</a></li>
-                <li><a href="#">Beta 0.0.08</a></li>
-                <li><a href="#">Beta 0.0.09</a></li>
-            </ul>
-        </section>
-
-        <section class="info">
-            <h2>🧊 Giới thiệu</h2>
-            <p>lunaLauncher là dự án launcher hiện đại với hiệu ứng mùa đông và thiết kế nhẹ nhàng. Các bản beta từ 0.0.03 → 0.0.09 sẽ tập trung kiểm thử hiệu ứng GUI, tuyết rơi, panorama, và tối ưu hiệu năng.</p>
-        </section>
-    </main>
-
-    <footer>
-        <p>© 2025 lunaLauncher | Stay warm, devs ❄️</p>
-    </footer>
+  <div class="overlay"></div>
+  <div class="content">
+    <h1>lunaLauncher BetaTest 0.0.03</h1>
+    <p>Winter Event — Early Development Phase</p>
+    <a href="https://github.com/yourname/lunaLauncher/releases">Xem các bản thử nghiệm</a>
+  </div>
 </body>
 </html>
