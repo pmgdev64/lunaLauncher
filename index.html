@@ -1,90 +1,216 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>lunaLauncher BetaTest</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
-      font-family: "Noto Sans JP", "Noto Sans";
-      color: white;
-      text-align: center;
-    }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>lunaLauncher Official Release Countdown</title>
+  <style>
+    /* Định dạng cơ bản */
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: "Noto Sans JP", "Noto Sans", sans-serif; /* Thêm sans-serif dự phòng */
+      color: white;
+      text-align: center;
+    }
 
-    /* Background GIF */
-    body {
-      background: url('bg.gif') no-repeat center center fixed;
-      background-size: cover;
-      background-attachment: fixed;
-      image-rendering: -webkit-optimize-contrast;
-    }
+    /* Background GIF (Giữ nguyên) */
+    body {
+      background: url('bg.gif') no-repeat center center fixed;
+      background-size: cover;
+      background-attachment: fixed;
+      image-rendering: -webkit-optimize-contrast;
+    }
 
-    /* Overlay mờ để đọc text dễ hơn */
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 32, 0.4);
-      z-index: 0;
-    }
+    /* Overlay mờ */
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 32, 0.4);
+      z-index: 0;
+    }
 
-    .content {
-      position: relative;
-      z-index: 1;
-      top: 40%;
-      transform: translateY(-40%);
-    }
+    .content {
+      position: relative;
+      z-index: 1;
+      top: 50%; /* Đưa nội dung ra giữa màn hình hơn */
+      transform: translateY(-50%);
+      padding: 0 20px;
+    }
 
-    h1 {
-      font-size: 2.8em;
-      letter-spacing: 2px;
-      text-shadow: 0 0 15px #00caff;
-    }
+    /* Tiêu đề */
+    h1 {
+      font-size: 2.8em;
+      letter-spacing: 2px;
+      text-shadow: 0 0 15px #00caff;
+      margin-bottom: 10px;
+    }
 
-    p {
-      font-size: 1.2em;
-      color: #cfeaff;
-    }
+    p {
+      font-size: 1.2em;
+      color: #cfeaff;
+      margin-top: 5px;
+    }
 
-    a {
-      color: #a8e1ff;
-      text-decoration: none;
-      border: 1px solid #a8e1ff;
-      padding: 10px 20px;
-      border-radius: 10px;
-      transition: 0.3s;
-    }
+    /* Nút CTA */
+    a {
+      color: #a8e1ff;
+      text-decoration: none;
+      border: 1px solid #a8e1ff;
+      padding: 10px 20px;
+      border-radius: 10px;
+      transition: 0.3s;
+      display: inline-block; /* để căn giữa */
+      margin-top: 30px;
+    }
 
-    a:hover {
-      background: rgba(255, 255, 255, 0.2);
-    }
+    a:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
 
-    /* Logo góc trên, nhỏ hơn */
-    .logo {
-      position: absolute;  /* cố định góc trên */
-      top: 20px;           /* khoảng cách từ trên */
-      left: 20px;          /* khoảng cách từ trái */
-      width: 120px;        /* chỉnh nhỏ hơn */
-      z-index: 2;          /* trên overlay và content */
-    }
-  </style>
+    /* Logo góc trên */
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 120px;
+      z-index: 2;
+    }
+
+    /* Định dạng Bộ đếm ngược */
+    #countdown-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .time-segment {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      min-width: 80px;
+    }
+
+    .time-value {
+      font-size: 3em;
+      font-weight: bold;
+      color: #ffffff; /* Màu trắng sáng */
+      text-shadow: 0 0 10px #00caff;
+      display: block;
+    }
+
+    .time-label {
+      font-size: 0.8em;
+      color: #a8e1ff;
+      margin-top: 5px;
+      display: block;
+    }
+  </style>
 </head>
 <body>
-  <div class="overlay"></div>
+  <div class="overlay"></div>
 
-  <!-- Logo cố định góc trên -->
-  <img src="logo.png" alt="lunaLauncher Logo" class="logo">
+  <img src="logo.png" alt="lunaLauncher Logo" class="logo">
 
-  <div class="content">
-    <h1>lunaLauncher BetaTest 0.0.03</h1>
-    <p>Winter Event — Early Development Phase</p>
-    <a href="https://github.com/pmgdev64/luna-launcher/releases">Xem các bản thử nghiệm</a>
-  </div>
+  <div class="content">
+    <h1>LUNA LAUNCHER</h1>
+    <p>Build 1231: Đếm ngược đến Phiên bản Chính thức</p>
+    <p style="font-size: 1.5em; color: #ffeb3b; margin-top: 20px; text-shadow: 0 0 10px #ffeb3b;">Sẵn sàng ra mắt vào 23:58 (GMT+7) ngày 31/12/2025</p>
+
+        <div id="countdown-container">
+      <div class="time-segment">
+        <span id="days" class="time-value">00</span>
+        <span class="time-label">Ngày</span>
+      </div>
+      <div class="time-segment">
+        <span id="hours" class="time-value">00</span>
+        <span class="time-label">Giờ</span>
+      </div>
+      <div class="time-segment">
+        <span id="minutes" class="time-value">00</span>
+        <span class="time-label">Phút</span>
+      </div>
+      <div class="time-segment">
+        <span id="seconds" class="time-value">00</span>
+        <span class="time-label">Giây</span>
+      </div>
+    </div>
+
+    <a href="https://github.com/pmgdev64/luna-launcher">Theo dõi GitHub để cập nhật</a>
+  </div>
+
+    <script>
+    // Thời điểm ra mắt: 23:58 ngày 31/12/2025 (GMT+7)
+    const RELEASE_TIME = new Date('2025-12-31T23:58:00'); 
+    // Múi giờ API bạn chọn (GMT+7)
+    const TIMEZONE = 'Asia/Ho_Chi_Minh'; 
+    const API_URL = `https://worldtimeapi.org/api/timezone/${TIMEZONE}`;
+
+    function updateCountdown(serverTime) {
+      const now = serverTime;
+      const distance = RELEASE_TIME - now;
+
+      if (distance < 0) {
+        document.getElementById("countdown-container").innerHTML = "<h2 style='color: #4CAF50; text-shadow: 0 0 10px #4CAF50;'>LUNA LAUNCHER ĐÃ RA MẮT! 🎉</h2>";
+        clearInterval(timerInterval);
+        return;
+      }
+
+      // Tính toán thời gian
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      // Hiển thị kết quả (thêm '0' nếu < 10)
+      document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
+      document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+      document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+      document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+    }
+
+    async function initializeCountdown() {
+      let serverTime = null;
+      
+      // 1. Lấy thời gian chính xác từ WorldTimeAPI
+      try {
+        const response = await fetch(API_URL);
+        if (!response.ok) throw new Error("API call failed");
+        const data = await response.json();
+        
+        // Chuyển đổi chuỗi thời gian của API thành đối tượng Date
+        serverTime = new Date(data.datetime);
+        
+      } catch (error) {
+        console.error("Could not fetch server time. Using local machine time:", error);
+        // Nếu API lỗi, dùng thời gian cục bộ (kém chính xác hơn)
+        serverTime = new Date(); 
+      }
+
+      // 2. Tính toán độ lệch giữa thời gian server và thời gian cục bộ (máy người dùng)
+      const localTime = new Date();
+      const offset = serverTime.getTime() - localTime.getTime();
+      
+      // 3. Thiết lập bộ đếm ngược bằng thời gian cục bộ + độ lệch (offset)
+      // Điều này giúp bộ đếm chạy mượt mà trên máy người dùng nhưng bắt đầu từ thời gian chuẩn của server.
+      window.timerInterval = setInterval(() => {
+        const currentTime = new Date();
+        const syncedTime = new Date(currentTime.getTime() + offset);
+        updateCountdown(syncedTime);
+      }, 1000);
+
+      // Chạy lần đầu ngay lập tức
+      updateCountdown(new Date(localTime.getTime() + offset)); 
+    }
+
+    initializeCountdown();
+  </script>
 </body>
 </html>
