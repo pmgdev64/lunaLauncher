@@ -64,10 +64,23 @@
     a:hover {
       background: rgba(255, 255, 255, 0.2);
     }
+
+    /* Logo góc trên */
+    .logo {
+      position: absolute;  /* cố định góc trên */
+      top: 20px;           /* khoảng cách từ trên */
+      left: 20px;          /* khoảng cách từ trái */
+      width: 150px;        /* điều chỉnh kích thước logo */
+      z-index: 2;          /* trên overlay và content */
+    }
   </style>
 </head>
 <body>
   <div class="overlay"></div>
+
+  <!-- Logo cố định góc trên -->
+  <img src="logo.png" alt="lunaLauncher Logo" class="logo">
+
   <div class="content">
     <h1>lunaLauncher BetaTest 0.0.03</h1>
     <p>Winter Event — Early Development Phase</p>
